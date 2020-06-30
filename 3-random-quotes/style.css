@@ -1,0 +1,50 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background-color: rgb(247, 157, 93);
+}
+
+.container {
+    margin: 10% 30%;
+    max-width: 50%;
+    padding: 50px;
+    text-align: center;
+    background-color: rgb(255, 239, 227);
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.13);
+}
+
+button {
+    padding: 20px;
+    width: 50%;
+    background-color: rgb(72, 158, 83);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quote {
+    margin-top: 30px;
+    padding: 5px;
+    display: flex;
+    max-width: 600px;
+}
+
+.quote p {
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.author {
+    float: right;
+    color: darkcyan;
+    font-size: 18px;
+}
+
+img {
+    width: 100px;
+    height: 70px;
+}
