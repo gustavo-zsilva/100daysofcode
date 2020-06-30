@@ -7,8 +7,13 @@ button.addEventListener('click', () => {
     let quoteIndex = Math.floor(randomNumber * quoteArray.length)
     let randomKey = quoteArray[quoteIndex]
 
-    let randomQuote = quotes[randomKey.quote]
-    alert(randomQuote)
+    let randomModel = quotes[randomKey]
+    let randomQuote = randomModel.quote
+    let authorQuote = randomModel.author
+
+    text.innerHTML = randomQuote
+    author.innerHTML = authorQuote
+    
 })
 
 const quotes = [
