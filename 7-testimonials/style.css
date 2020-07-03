@@ -1,0 +1,82 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80), no-repeat;
+    background-size: cover;
+}
+
+/* Container */
+
+.container {
+    max-width: 700px;
+    margin: 5% auto;
+    text-align: center;
+}
+
+.container header {
+    margin-bottom: 100px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.container header span {
+    color: rgb(255, 8, 0);
+}
+
+/* Main */
+
+.main {
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    border-radius: 5px;
+    padding: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.212);
+}
+
+.main .client-photo {
+    width: 100px;
+
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.726);
+    border-radius: 30px;
+}
+
+.main .client-user {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.main .rating {
+    margin-bottom: 30px;
+}
+
+.main .rating img {
+    width: 40px;
+}
+
+.main .review {
+    line-height: 25px;
+}
+
+.main .quote {
+    width: 60px;
+}
+
+/* Controls */
+
+.controls img {
+    top: 0;
+    top: 50%;
+    width: 80px;
+    position: absolute;
+}
+
+.controls img.first-arrow {
+    right: 25%;
+}
+
+.controls img.second-arrow {
+    left: 25%;
+}
