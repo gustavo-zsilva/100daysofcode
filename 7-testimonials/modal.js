@@ -16,7 +16,7 @@ modalButton.addEventListener('click', () => {
 })
 
 a.addEventListener('click', () => {
-    
+
     if (user.value.length == 0 && imgUrl.value.length == 0 && ratingInput.value.length == 0 && opinionInput.value.length == 0) {
         modal.classList.add('hide')
         container.style.filter = ''
@@ -31,7 +31,7 @@ a.addEventListener('click', () => {
 })
 
 finishBtn.addEventListener('click', () => {
-    
+    importScript()
 })
 
 function clearAll() {
@@ -54,6 +54,33 @@ function checkInputs() {
     }
 }
 
+function importScript() {( function() {
 
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '../7-testimonials/script.js';
+
+document.getElementsByTagName('head')[0].appendChild(script);
+})();
+
+// depois daqui é só chamar o método desejado
+// (que está dentro de script.js)
+// Exemplo:
+
+// adicionar um novo usuário
+all.push({
+    "user-photo": imgUrl.value,
+    "user-name": user.value,
+    rating: String(ratingInput.value),
+    "text-review": opinionInput.value,
+    id: all[Number(all.length + 1)] 
+})
+
+console.log(all);
+
+
+ // que está lá no outro arquivo
+
+}
 
 
