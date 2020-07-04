@@ -19,28 +19,28 @@ const all = [
         "user-photo": "https://image.flaticon.com/icons/svg/3158/3158266.svg",
         "user-name": "Catarina",
         rating: "3.5",
-        "text-review": "Lorem Ipsum",
+        "text-review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt commodi illo voluptatem sunt sint inventore recusandae incidunt dolorem fugiat placeat! Culpa cum molestias, minus tempora provident eligendi repellendus beatae deserunt!",
         id: 1
     },
     {
         "user-photo": "https://image.flaticon.com/icons/svg/3158/3158271.svg",
         "user-name": "Sandra",
         rating: "4",
-        "text-review": "Lorem Ipsum",
+        "text-review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi maxime cum illum beatae soluta harum magni aperiam esse excepturi deserunt quidem optio cupiditate quam nesciunt consectetur, quasi possimus velit? Officiis!",
         id: 2
     },
     {
         "user-photo": "https://image.flaticon.com/icons/svg/2922/2922510.svg",
         "user-name": "Marco",
         rating: "3.5",
-        "text-review": "Lorem Ipsum",
+        "text-review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis mollitia dolorum animi, voluptatibus laudantium esse iste fugit! Assumenda qui explicabo commodi omnis. Voluptatem eos alias architecto perferendis quod, ipsa laboriosam.",
         id: 3
     },
     {
         "user-photo": "https://image.flaticon.com/icons/svg/2922/2922561.svg",
         "user-name": "Ivani",
         rating: "0",
-        "text-review": "Lorem Ipsum",
+        "text-review": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, consequuntur. Sint nesciunt asperiores error, totam magnam, cum provident, atque vel quibusdam nulla tenetur unde maxime voluptatum tempora incidunt aliquam illum.",
         id: 4
     },
 ]
@@ -130,3 +130,5 @@ function changePage(id) {
         }
     }
 }
+
+

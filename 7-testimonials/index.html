@@ -35,8 +35,46 @@
             <a href="#"><img src="https://image.flaticon.com/icons/svg/833/833397.svg" onclick="changePage(0)" class="first-arrow" alt="Arrow Right"></a>
             <a href="#"><img src="https://image.flaticon.com/icons/svg/833/833385.svg" onclick="changePage(1)" class="second-arrow" alt="Arrow Left"></a>
         </section>
+
+        <section class="add">
+            <button>Add new testimonial</button>
+        </section>
+
+        
+    </div>
+
+    <div class="modal hide">
+        <form action="#">
+            <div class="all-content">
+                
+                <div class="header">
+                    <h1>Formulário</h1> <a href="#">X</a>
+                </div>
+
+                <div class="all-inputs">
+
+                    <label for="username-input">Seu nome de usuário</label>
+                    <input type="text" id="username-input" required>
+
+                    <label for="img-url-input">Sua foto de perfil [url]</label>
+                    <input type="url" id="img-url-input" required>
+
+                    <label for="rating-input">Seu rating [0-5] </label>
+                    <input type="number" id="rating-input" max="5" min="0" required>
+
+                    <label for="opinion-input">Digite sua opinião aqui</label>
+                    <textarea name="opinion-input" id="opinion-input" cols="5" rows="3" required></textarea>
+                    
+                </div>
+
+                <button type="submit">Terminar</button>
+                
+            </div>
+        </form>
+
     </div>
 
     <script src="../7-testimonials/script.js"></script>
+    <script src="../7-testimonials/modal.js"></script>
 </body>
 </html>

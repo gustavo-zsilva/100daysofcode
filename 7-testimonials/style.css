@@ -7,6 +7,10 @@ body {
     background-size: cover;
 }
 
+.hide {
+    display: none;
+}
+
 /* Container */
 
 .container {
@@ -80,3 +84,106 @@ body {
 .controls img.second-arrow {
     left: 25%;
 }
+
+/* Section Add */
+
+section.add button {
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    background-color: rgba(0, 0, 0, 0.11);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Modal */
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.432);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+    /* filter: blur(10px); */
+
+.all-content .header {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.all-content .header h1 {
+    width: fit-content;
+}
+
+.all-content .header a {
+    text-decoration: none;
+    color: white;
+    align-self: flex-end;
+    padding-bottom: 30px;
+    font-size: 18px;
+}
+
+.all-content .header a:hover {
+    color: red;
+    transition: 300ms;
+}
+
+.all-content {
+    width: 500px;
+    margin: 340px auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.all-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
+.all-inputs input, label {
+    margin-bottom: 20px;
+    padding: 10px;
+
+}
+
+.all-inputs input {
+    background-color: rgba(0, 0, 0, 0.432);
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    border-radius: 3px;
+    color: white;
+}
+
+.all-inputs textarea {
+    background-color: rgba(0, 0, 0, 0.432);
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    border-radius: 3px;
+    color: white;
+    padding: 10px;
+}
+
+.all-content button {
+    width: 50%;
+    float: right;
+    margin-top: 30px;
+    padding: 15px;
+    align-self: flex-end;
+    background-color: rgba(0, 0, 0, 0.432);
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    color: white;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
