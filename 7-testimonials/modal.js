@@ -32,6 +32,11 @@ a.addEventListener('click', () => {
 
 finishBtn.addEventListener('click', () => {
     importScript()
+
+    modal.classList.add('hide')
+    container.style.filter = ''
+
+    clearAll()
 })
 
 function clearAll() {
@@ -67,13 +72,17 @@ document.getElementsByTagName('head')[0].appendChild(script);
 // (que está dentro de script.js)
 // Exemplo:
 
+// variáveis para definir o id
+let number = all[all.length -1].id;
+let newNumber = Number(number += 1)
+
 // adicionar um novo usuário
 all.push({
     "user-photo": imgUrl.value,
     "user-name": user.value,
     rating: String(ratingInput.value),
     "text-review": opinionInput.value,
-    id: all[Number(all.length + 1)] 
+    id: newNumber
 })
 
 console.log(all);
