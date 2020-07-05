@@ -14,7 +14,9 @@
         </header>
 
         <section class="main">
-            <img src="" class="client-photo" alt="Client Photo">
+            <div class="cphoto">
+                <img src="" class="client-photo" alt="Client Photo">
+            </div>
 
             <h3 class="client-user">Usuário</h3>
 
@@ -26,7 +28,7 @@
                 <img src="https://image.flaticon.com/icons/svg/929/929566.svg" alt="">
             </div>
 
-            <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit incidunt dicta ullam perspiciatis, voluptas iusto nam, magni quo sit culpa temporibus error assumenda, doloribus deleniti veniam cupiditate. Alias, amet a.</p>
+            <p class="review"></p>
 
             <img src="https://image.flaticon.com/icons/svg/2087/2087863.svg" alt="Quote" class="quote">
         </section>
@@ -40,6 +42,14 @@
             <button>Add new testimonial</button>
         </section>
 
+        <section class="edit">
+            <button>Edit</button>
+            <button id="finish" class="hide">Finish</button>
+        </section>
+
+        <section class="remove">
+            <button><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Octicons-trashcan.svg" alt="Trash Can"></button>
+        </section>
         
     </div>
 
@@ -76,5 +86,7 @@
 
     <script src="../7-testimonials/script.js"></script>
     <script src="../7-testimonials/modal.js"></script>
+    <script src="../7-testimonials/edit.js"></script>
+    <script src="../7-testimonials/remove.js"></script>
 </body>
 </html>

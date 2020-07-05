@@ -1,4 +1,4 @@
-const clientPhoto = document.querySelector('.client-photo')
+const clientPhoto = document.querySelector('.cphoto .client-photo')
 const clientUser = document.querySelector('.client-user')
 const ratingElement = document.querySelector('.rating')
 const reviewElement = document.querySelector('.review')
@@ -119,6 +119,7 @@ function changePage(id) {
             alert('Não há mais depoimentos posteriores.')
         } else {
             elementRender(counter++)
+            
         }
 
     } else {
@@ -127,6 +128,7 @@ function changePage(id) {
             alert('Não há mais depoimentos anteriores.')
         } else {
             elementRender(counter--)
+
         }
     }
 }
