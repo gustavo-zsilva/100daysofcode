@@ -58,13 +58,17 @@ function edit() {
         newRating.max = '5'
         newRating.min = '0'
         newRating.required
-    
+        newRating.placeholder = '0-5'
+
         newReview.required
         newUser.required
         newPhoto.required
+
+        newUser.placeholder = 'Novo usuário'
     
         newPhoto.type = 'url'
-    
+        newPhoto.placeholder = 'Digite a url da nova foto'
+
         newReview.cols = '70'
         newReview.rows = '5'
 

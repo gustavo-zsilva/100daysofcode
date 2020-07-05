@@ -1,11 +1,9 @@
 const removeBtn = document.querySelector('.remove button')
 removeBtn.addEventListener('click', () => {
     if(confirm('Deseja apagar este depoimento? ')) {
-        
-    } else {
-        
+        console.log(counter)
+        all.splice(counter, 1)
     }
-    
 })
 
 // function importScript() {(function() {
@@ -16,6 +14,9 @@ removeBtn.addEventListener('click', () => {
     
 //     document.getElementsByTagName('head')[0].appendChild(script);
 //     })();
+    
+//     console.log(all);
+//     console.log(counter);
     
 // }
 
