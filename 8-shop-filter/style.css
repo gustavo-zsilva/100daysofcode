@@ -1,0 +1,67 @@
+* {
+    font-family: 'Kaushan Script', cursive ,Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #d6d4d4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    background-color: plum;
+}
+
+header h2, span{
+    font-size: 35px;
+}
+
+header span {
+    color: rgb(252, 96, 122);
+    font-size: 50px;
+}
+
+section .navigation {
+
+}
+
+section.navigation .search {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+section.navigation .search a {
+    margin: 0;
+    padding: 0;
+}
+
+section.navigation .search input {
+    width: 30%;
+    height: 40px;
+}
+
+section.navigation .search img {
+    background-color: purple;
+    width: 34px;
+    margin-bottom: 0;
+    padding: 6px;
+    border-radius: 10px 0 0 10px;
+}
+
+section.items {
+    column-count: 3;
+    max-width: 500px;
+    
+    
+}
+
+section.items .item {
+    align-items: center;
+    
+}
+
+section.items .item img {
+    width: 30px;
+}
