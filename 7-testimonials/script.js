@@ -116,7 +116,9 @@ function changePage(id) {
     if (id === 0) {
         // NEXT 
         if (counter == all[all.length -1].id) {
-            alert('Não há mais depoimentos posteriores.')
+            // alert('Não há mais depoimentos posteriores.')
+            counter = -1
+            elementRender(counter++)
         } else {
             elementRender(counter++)
             
@@ -125,7 +127,9 @@ function changePage(id) {
     } else {
         // PREVIOUS
         if (counter <= 0) {
-            alert('Não há mais depoimentos anteriores.')
+            // alert('Não há mais depoimentos anteriores.')
+            counter = all[all.length -1].id + 1
+            elementRender(counter--)
         } else {
             elementRender(counter--)
 
