@@ -26,7 +26,6 @@ function renderTodos() {
             input.value = span.textContent
             let index = todos.indexOf(span.textContent)
             todos.splice(index, 1)
-            console.log(todos);
         });
 
         rm.addEventListener('click', () => {
@@ -55,11 +54,21 @@ function renderTodos() {
 
 
 addBtn.addEventListener('click', () => {
-    todos.push(input.value);
-    input.value = '';
-    input.focus();
+    if (input.value.length === 0) {
+        let warningsDiv = document.querySelector('.warnings')
+        warningsDiv.classList.remove('hide')
+        
+        setTimeout(() => {
+            warningsDiv.classList.add('hide')
+        }, 3000)
 
-    renderTodos();
+    } else {
+        todos.push(input.value);
+        input.value = '';
+        input.focus();
+    
+        renderTodos();
+    }
 });
 
 function editElement(span) {
