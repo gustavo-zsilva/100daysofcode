@@ -9,6 +9,7 @@ removeBtn.addEventListener('click', () => {
     }
 })
 
+
 function configureIds() {
     for(let i = 0; i <= all.length; i++) {
         all[i].id = i

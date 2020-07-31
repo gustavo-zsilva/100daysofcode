@@ -1,0 +1,80 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.checked {
+    color: gray;
+    text-decoration: line-through;
+    transition: 400ms;
+}
+
+.container {
+    background-color: white;
+    max-width: 800px;
+    margin: 30px auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Div Header */
+
+.header h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+/* Div Inputs */
+
+.inputs {
+    display: flex;
+    justify-content: center;
+}
+
+.inputs input:hover {
+    background-color: rgba(255, 166, 0, 0.158);
+    transition: 400ms;
+}
+
+.inputs input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid orange;
+
+}
+
+.inputs button {
+    border-radius: 0 4px 4px 0;
+    border: 1px solid blue;
+    background-color: rgba(128, 128, 128, 0.123);
+    cursor: pointer;
+    width: 15%;
+}
+
+/* Div Todos */
+
+.todos {
+    margin-top: 50px;
+}
+
+.todos ul {
+    list-style-type: none;
+}
+
+.todos ul li {
+    margin-bottom: 30px;
+}
+
+.todos ul li img {
+    float: right;
+    width: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
