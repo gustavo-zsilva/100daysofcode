@@ -1,0 +1,23 @@
+.hide {
+    display: none;
+}
+
+.fail {
+    background-color: rgba(255, 0, 0, 0.336);
+    color: white;
+}
+
+.span-name {
+    background-color: rgb(245, 168, 26);
+    color: black;
+}
+
+.span-course {
+    background-color: green;
+    color: white;
+}
+
+.span-author {
+    background-color: red;
+    color: white;
+}
