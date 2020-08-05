@@ -44,10 +44,13 @@ const spanClasses = [
 ]
 
 function renderCourses() {
+    let coursesDiv = document.querySelector('.courses')
+
+    coursesDiv.innerHTML = ''
+
     courses.forEach(card => {
 
         // Cria os componentes para criação do novo card
-        let coursesDiv = document.querySelector('.courses')
 
         let newCourseDiv = document.createElement('div')
         let newImage = document.createElement('img')
@@ -62,8 +65,13 @@ function renderCourses() {
             span.classList.add(spanClasses[0][i])
             span.textContent = spanClasses[1][i]
 
-            p.textContent += card.name
-
+            if (span.textContent == 'Name:') {
+                p.textContent += card.name
+            } else if (span.textContent == 'Course:') {
+                p.textContent += card.course
+            } else {
+                p.textContent += card.author
+            }
 
             p.appendChild(span)
             courseDescription.appendChild(p)
@@ -102,13 +110,21 @@ submitBtn.addEventListener('click', () => {
         setTimeout(() => {
             warningsDiv.classList.toggle('hide')
             loadingDiv.classList.toggle('hide')
+
         }, 2000)
 
-        addCourse()
+        courses.push({
+            img: images[randomImage()],
+            name: nameInput.value,
+            course: courseInput.value,
+            author: authorInput.value
+        })
 
         inputs.forEach(input => {
             input.value = ''
         })
+
+        renderCourses()
 
     } else {
         p.textContent = 'Inputs not validated.'
@@ -125,9 +141,6 @@ submitBtn.addEventListener('click', () => {
             input.style.border = '4px solid red'
         })
     }
-
-
-
 })
 
 function checkInputs() {
@@ -145,9 +158,6 @@ function checkInputs() {
     }
 }
 
-function addCourse() {
-    alert('working')
-}
 
 inputs.forEach(input => {
     input.addEventListener('blur', () => {
