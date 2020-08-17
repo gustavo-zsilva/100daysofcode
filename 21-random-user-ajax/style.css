@@ -1,0 +1,80 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid gray;
+}
+
+.container .user {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .user .image-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid gray;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container .user .image-container img {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 350px;
+
+    vertical-align: middle;
+}
+
+.container .user .info-container {
+    margin: 0 0.8rem 0.8rem ;
+}
+
+.container .user .info-item img {
+    width: 20px;
+    margin-right: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.container .user .span {
+    background-color: gray;
+    border-radius: 0.4rem;
+    padding: 5px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+}
+
+.container .footer {
+    display: flex;
+
+    height: 6.2rem;
+    border-top: 1px solid gray;
+    background-color: rgba(128, 128, 128, 0.068);
+    justify-content: center;
+    align-content: center;
+}
+
+.container .footer button {
+    height: 60%;
+    width: 50%;
+    align-self: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid rgb(211, 105, 35);
+    border-radius: 0.4rem;
+    color: rgb(211, 105, 35);
+    font-size: 17px;
+    box-shadow: 3px 3px 3px rgba(211, 105, 35, 0.192);
+    transition: 0.2s;
+}
+
+.container .footer button:hover {
+    background-color: rgba(255, 174, 0, 0.555);
+}
