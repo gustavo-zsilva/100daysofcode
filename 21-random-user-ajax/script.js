@@ -1,6 +1,7 @@
 const generateBtn = document.querySelector('.footer button')
 const mainImg = document.querySelector('.image-container img')
 const allSpan = document.querySelectorAll('.span')
+const warning = document.querySelector('.warning')
 
 let genders = ['men', 'women']
 
@@ -22,7 +23,7 @@ generateBtn.addEventListener('click', () => {
             changeImage(randomPersonIndex)
         })
         .catch(error => {
-            console.log(error)
+            renderError(error)
         })
 })
 
@@ -36,4 +37,14 @@ const populateFields = () => {
     allSpan.forEach((span, index) => {
         span.innerHTML = userInfo[index]
     })
+}
+
+const renderError = (error) => {
+    let warningP = document.querySelector('.warning p')
+    warningP.innerHTML = `Algo deu errado na requisição. ${error}`
+    warning.classList.toggle('hide')
+
+    setTimeout(() => {
+        warning.classList.toggle('hide')
+    }, 2000)
 }

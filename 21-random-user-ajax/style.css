@@ -2,6 +2,20 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.hide {
+    display: none;
+}
+
+.warning {
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 1px solid red;
+    border-radius: 0.4rem;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.548);
+    color: white;
+}
+
 .container {
     max-width: 500px;
     margin: auto;
