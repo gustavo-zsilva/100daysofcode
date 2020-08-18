@@ -1,0 +1,29 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.container .colors .color {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    flex-direction: row;
+    margin: 0;
+    border: 2px solid black;
+    border-radius: 16rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.container .colors .color:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.103);
+}
+
+.container footer {
+    margin-top: 3rem;
+}
