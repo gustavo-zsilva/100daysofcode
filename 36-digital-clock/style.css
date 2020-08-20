@@ -3,26 +3,34 @@
 }
 
 body {
-    background-color: rgb(41, 41, 41);
+    background-color: #eee6df;
+}
+
+.container,
+.container header,
+.container section {
+    transition: background-color 0.2s;
 }
 
 .container {
-    max-width: 90%;
+    max-width: 85%;
     margin: 10rem auto;
     text-align: center;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.123);
 }
 
 .container header {
-    background-color: rgba(10, 22, 73, 0.89);
+    background-color: #ffb283;
     color: white;
     padding: 1rem;
+    border-radius: 0.3rem 0.3rem 0 0;
 }
 
 .container section {
-    background-color: rgba(8, 8, 77, 0.76);
+    background-color:  #bb9f8b;
     color: white;
     padding: 6rem;
+    border-radius: 0 0 0.3rem 0.3rem;
 }
 
 .container section p.time {
