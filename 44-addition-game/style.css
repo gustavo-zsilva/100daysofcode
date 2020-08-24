@@ -1,0 +1,185 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Additional Classes */
+.hide {
+    display: none;
+}
+
+.error {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.432);
+}
+
+.success {
+    border: 1px solid green;
+    background-color: rgba(0, 128, 0, 0.336);
+}
+
+/* Container */
+
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    border: 1px solid black;
+    padding: 2rem 8rem 6rem;
+    border-radius: 0.4rem;
+    box-shadow: 30px 30px 3px rgba(0, 0, 0, 0.116);
+    background-color: white;
+}
+
+/* Header */
+
+.container header {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: rgb(37, 0, 37);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.027);
+}
+
+.container header h1 {
+    margin-bottom: 2rem;
+}
+
+.container header p {
+    border-bottom: 1px solid rgb(37, 2, 37);
+    padding-bottom: 1rem;
+}
+
+.container header .placar {
+    border: 1px solid rgb(37, 2, 37);
+    width: 3rem;
+    padding: 15px;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+/* Main Section */
+
+.container section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container section .number { 
+    padding: 3rem;
+    font-size: 3rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.041);
+}
+
+.container section .equal,
+.container section .plus {
+    align-self: center;
+    font-size: 3rem;
+}
+
+.container section .first {
+    border: 3px solid green;
+    padding: 3rem;
+}
+
+.container section .second {
+    border: 3px solid blue;
+}
+
+.container section button,
+.container section input {
+    height: 3rem;
+    align-self: center;
+    padding: 0.2rem 1rem;
+    border-radius: 0.2rem;
+    border: 1px solid black;
+    transition: 0.2s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.062);
+}
+
+.container section input {
+    background-color: transparent;
+}
+
+.container section button {
+    width: 10rem;
+    background-color: rgb(255, 66, 66);
+    color: white;
+    letter-spacing: 0.02rem;
+    cursor: pointer;
+}
+
+.container section button:hover {
+    width: 13rem;
+}
+
+.container section input:focus {
+    padding: 0.2rem 2rem;
+}
+
+/* Warning Div */
+
+.warning {
+    text-align: center;
+    margin-top: 5rem;
+    border-radius: 0.2rem;
+    color: white;
+    letter-spacing: 0.03rem;
+}
+
+/* Scoreboard */
+
+.show-scoreboard {
+    display: flex;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 10px;
+    align-self: center;
+    background-color: rgb(136, 255, 136);
+    color: black;
+    letter-spacing: 0.03rem;
+    border-radius: 0.2rem;
+    border: 1px solid green;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.068);
+}
+
+.show-scoreboard:hover {
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.068);
+    padding: 10px 20px;
+}
+
+.show-scoreboard img {
+    width: 17px;
+    margin-left: 13px;
+}
+
+.scoreboard {
+    margin-top: 3rem;
+    border: 1px solid rgb(37, 2, 37);
+    border-radius: 0.2rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.068);
+}
+
+.scoreboard legend {
+    text-align: center;
+    font-family: Archivo, sans-serif;
+    font-size: 2rem;
+}
+
+.scoreboard ul {
+    margin: 1rem;
+    padding: 0;
+}
+
+.scoreboard ul li {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 0.8rem;
+    border-left: 2px solid rgb(37, 2, 37);
+    border-right: 2px solid rgb(37, 2, 37);
+    border-radius: 3px;
+}
+

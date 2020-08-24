@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Addition Game Project</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Addition Game!</h1>
+            <p>Nós vamos te mostrar dois números aleatórios e você tem que acertar quanto é a soma deles.</p>
+            <div class="placar">
+                0
+            </div>
+        </header>
+
+        <section>
+            <div class="number first">0</div>
+            <span class="plus">+</span>
+            <div class="number second">0</div>
+            <span class="equal">=</span>
+
+            <input type="number" placeholder="Digite sua resposta aqui...">
+            <button>Check</button>
+        </section> 
+
+        <div class="warning hide">
+            <p></p>
+        </div>
+
+        <button class="show-scoreboard">
+            Show Scoreboard
+            <img src="https://image.flaticon.com/icons/svg/2089/2089720.svg" alt="Down Arrow">
+        </button>
+
+        <fieldset class="scoreboard hide">
+            <legend>Scoreboard</legend>
+            <ul>
+            </ul>
+        </fieldset>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
