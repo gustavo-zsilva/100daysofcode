@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Addition Game!</h1>
+            <h1>Jogo da Adição!</h1>
             <p>Nós vamos te mostrar dois números aleatórios e você tem que acertar quanto é a soma deles.</p>
             <div class="placar">
                 0
@@ -25,7 +25,7 @@
             <span class="equal">=</span>
 
             <input type="number" placeholder="Digite sua resposta aqui...">
-            <button>Check</button>
+            <button>Checar</button>
         </section> 
 
         <div class="warning hide">
@@ -33,15 +33,22 @@
         </div>
 
         <button class="show-scoreboard">
-            Show Scoreboard
+            Mostrar Placar
             <img src="https://image.flaticon.com/icons/svg/2089/2089720.svg" alt="Down Arrow">
         </button>
 
         <fieldset class="scoreboard hide">
-            <legend>Scoreboard</legend>
+            <legend>Placar</legend>
             <ul>
             </ul>
         </fieldset>
+
+        <div class="clear-wrapper">
+            <button class="clear-scoreboard hide">
+                Limpar Placar
+                <img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Delete Icon">
+            </button>
+        </div>
     </div>
 
     <script src="./script.js"></script>

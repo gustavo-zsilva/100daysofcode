@@ -7,7 +7,9 @@ const scoreboardField = document.querySelector('.scoreboard')
 const showScoreBtn = document.querySelector('.show-scoreboard')
 let ul = document.querySelector('.scoreboard ul')
 
-let scoreList = [];
+const clearScoreboard = document.querySelector('.clear-scoreboard')
+
+let scoreList = JSON.parse(localStorage.getItem('scoreboard_list')) || [];
 
 let soma = 0;
 let counter = 0;
@@ -72,7 +74,15 @@ button.addEventListener('click', () => {
 })
 
 // Mostra e esconde o placar;
-showScoreBtn.addEventListener('click', () => scoreboardField.classList.toggle('hide'))
+showScoreBtn.addEventListener('click', () => {
+    scoreboardField.classList.toggle('hide')
+    clearScoreboard.classList.toggle('hide')
+})
+
+clearScoreboard.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+})
 
 // Renderiza uma mensagem de sucesso ou erro, com uma mensagem e um tipo passados de parâmetro;
 const renderMessage = (text, type) => {
@@ -96,9 +106,24 @@ const addNewScore = () => {
     let li = document.createElement('li')
     li.innerHTML = `Seconds: ${seconds} // Math Question: ${question}`
     ul.appendChild(li)
+    saveToStorage()
+}
+
+const saveToStorage = () => {
+    localStorage.setItem('scoreboard_list', JSON.stringify(scoreList))
+}
+
+const populateScoreboard = () => {
+    scoreList.forEach(score => {
+        let li = document.createElement('li')
+        li.innerHTML = `Seconds: ${score.seconds} // Math Question: ${score.question}`
+        ul.appendChild(li)
+    })
 }
 
 // Função em variável que checa se o valor do input é vazio e retorna um "true" caso sim e um "false" caso não;
 const checkInput = () => input.value.length === 0 ? true : false;
 
+populateScoreboard()
 populateNumbers();
+

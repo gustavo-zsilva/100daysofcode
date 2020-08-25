@@ -183,3 +183,35 @@ body {
     border-radius: 3px;
 }
 
+/* Clear Scoreboard */
+
+.clear-wrapper {
+    display: flex;
+
+}
+
+.clear-scoreboard {
+    margin: 3rem auto;
+    padding: 10px;
+    align-self: center;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 0.2rem;
+    justify-content: space-evenly;
+    width: 10rem;
+    background-color: rgba(255, 52, 52, 0.993);
+    color: white;
+    letter-spacing: 0.03rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.clear-scoreboard:hover {
+    width: 12rem;
+}
+
+.clear-scoreboard img {
+    width: 18px;
+    align-self: center;
+    margin-left: 0.5rem;
+}
