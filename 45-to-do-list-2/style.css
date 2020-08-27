@@ -1,0 +1,93 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+header h1 {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgb(95, 4, 95);
+    width: 15rem;
+    margin: auto;
+}
+
+section.new-todo {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+section.new-todo input,
+section.new-todo button {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.041);
+}
+
+section.new-todo input {
+    width: 70%;
+    padding: 0.8rem;
+    border: 1px solid rgb(44, 2, 44);
+    border-radius: 0.2rem 0 0 0.2rem;
+    transition: 0.2s;
+}
+
+section.new-todo button {
+    width: 20%;
+    padding: 0.8rem;
+    border: 1px solid rgb(44, 2, 44);
+    border-radius: 0 0.2rem 0.2rem 0;
+    background-color: rgb(13, 233, 13);
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+section.new-todo button:hover {
+    width: 25%;
+}
+
+section.new-todo input:focus {
+    width: 80%;
+}
+
+section.todos {
+    border: 1px solid rgb(44, 2, 44);
+    border-radius: 0.3rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.048);
+}
+
+section.todos h2 {
+    margin-bottom: 2rem;
+}
+
+section.todos ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+section.todos ul li {
+    align-self: center;
+    width: 90%;
+    margin: 0.8rem auto;
+    border-left: 2px solid rgb(95, 4, 95);
+}
+
+section.todos li span {
+    float: left;
+    margin-left: 20px;
+}
+
+section.todos li img {
+    width: 22px;
+    float: right;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
