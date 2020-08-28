@@ -25,10 +25,12 @@ function renderTodos() {
         let span = document.createElement('span')
         let rmBtn = document.createElement('img')
         let editBtn = document.createElement('img')
+        let upArrowBtn = document.createElement('img')
 
         span.textContent = todo;
         rmBtn.src = 'https://image.flaticon.com/icons/svg/1828/1828843.svg';
         editBtn.src = 'https://image.flaticon.com/icons/svg/598/598234.svg';
+        upArrowBtn.src = 'https://image.flaticon.com/icons/svg/566/566014.svg';
 
         rmBtn.addEventListener('click', () => {
             let index = todos.indexOf(todo);
@@ -44,6 +46,13 @@ function renderTodos() {
             saveToStorage();
         });
 
+        upArrowBtn.addEventListener('click', () => {
+            todos = todos.filter(item => item !== todo)
+            todos.unshift(todo)
+            renderTodos();
+        })
+
+        li.appendChild(upArrowBtn);
         li.appendChild(rmBtn);
         li.appendChild(editBtn);
         li.appendChild(span);
