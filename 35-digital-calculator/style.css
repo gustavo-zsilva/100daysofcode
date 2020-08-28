@@ -1,0 +1,59 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.container header {
+    display: flex;
+    justify-content: center;
+}
+
+.container header input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.048);
+}
+
+.container .keys {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.container .keys button {
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 0.2s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.048);
+}
+
+.container .keys button.number {
+    border: 2px solid rgb(59, 59, 255);
+    background-color: white;
+}
+
+.container .keys button.operator {
+    color: white;
+    font-weight: bold;
+    border: 2px solid rgb(70, 2, 87);
+}
+
+.container .keys button:focus,
+.container .keys button:hover {
+    background-color: rgba(0, 0, 255, 0.192);
+}
