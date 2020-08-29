@@ -1,5 +1,5 @@
-const output = document.querySelector('.container header input')
-const keys = document.querySelector('.container .keys')
+const output = document.querySelector('.container header input');
+const keys = document.querySelector('.container .keys');
 
 const labels = [
     { value: '+', color: 'orange' },
@@ -9,15 +9,15 @@ const labels = [
     { value: 'C', color: 'black' },
     { value: '=', color: 'red' },
     { value: '-1', color: 'gray' }
-]
+];
 
 for (let i = 0; i < 10; i++) {
     let number = document.createElement('button');
     number.classList.add('number');
     number.innerHTML = i;
-    number.addEventListener('click', (e) => addValue(e.target.innerHTML))
+    number.addEventListener('click', (e) => addValue(e.target.innerHTML));
 
-    keys.appendChild(number)
+    keys.appendChild(number);
 }
 
 labels.map(item => {
@@ -26,29 +26,28 @@ labels.map(item => {
     operator.innerHTML = item.value;
     operator.style.backgroundColor = item.color;
 
-    if (item.value === '=' ) {
-        operator.addEventListener('click', () => evalOperation());
-        keys.appendChild(operator);
-        return;
-    } else if (item.value === 'C') {
-        operator.addEventListener('click', () => output.value = '');
-        keys.appendChild(operator);
-        return;
-    } else if (item.value === '-1') {
-        operator.addEventListener('click', () => output.value = output.value.slice(0, -1))
-        keys.appendChild(operator)
-        return;
-    }
-    
-    operator.addEventListener('click', (e) => addValue(e.target.innerHTML));
-    keys.appendChild(operator);
-})
+    switch (item.value) {
+        case '=':
+            operator.addEventListener('click', () => evalOperation());
+            keys.appendChild(operator);
+            break;
+        case 'C':
+            operator.addEventListener('click', () => output.value = '');
+            keys.appendChild(operator);
+            break;
+        case '-1':
+            operator.addEventListener('click', () => output.value = output.value.slice(0, -1))
+            keys.appendChild(operator)
+            break;
+        default:
+            operator.addEventListener('click', (e) => addValue(e.target.innerHTML));
+            keys.appendChild(operator);
+    };
+});
 
 const addValue = target => output.value += target;
 function evalOperation() {
-    if (output.value === '') {
-        return;
-    }
+    if (output.value === '') { return }
     const result = eval(output.value)
     output.value = result
 }
