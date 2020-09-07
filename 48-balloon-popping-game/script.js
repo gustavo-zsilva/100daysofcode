@@ -37,7 +37,7 @@ function renderBalloons(event) {
     balloonTarget.style.backgroundColor = 'transparent';
     popped++;
 
-    checkBalloons()
+    checkBalloons();
 }
 
 function checkBalloons() {

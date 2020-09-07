@@ -1,84 +1,242 @@
-const questionDiv = document.querySelector('.quiz .question')
-const answerDiv = document.querySelector('.quiz .answers')
-const nextButton = document.querySelector('.quiz .next-question')
-let counter = 0;
-let correctCounter = 0;
-let t = 0;
+// ---------------- Variables ----------------
 
-function renderAnswers() {
-    nextButton.classList.add('hide')
+const answerDiv = document.querySelector('.answers')
+const questionElement = document.querySelector('.question')
+const nextQuestionBtn = document.querySelector('.next-question')
+const finalScreenElement = document.querySelector('.final-screen');
+const modal = document.querySelector('.modal')
 
-    answerDiv.innerHTML = ''
-    questionDiv.innerHTML = quizElements[counter].question
+// Button Variables
+const startGameBtn = document.querySelector('.start-game')
+const restartGameBtn = document.querySelector('.restart-button')
+const addQuestionsBtn = document.querySelector('.add-questions')
+const submitNewQuestion = modal.querySelector('button[type=submit]')
+const quitModalBtn = modal.querySelector('h1 img')
 
-    quizElements[counter].answers.forEach((answer) => {
-        t = 0;
-        let button = document.createElement('button');
-        button.textContent = answer;
-        button.addEventListener('click', () => checkCorrect(answer, quizElements[counter]));
+// Counter Variables
+let currentQuestionIndex = 0;
+let correctAnswerCounter = 0;
 
-        answerDiv.appendChild(button);
-    });
+// Events
+startGameBtn.onclick = startGame;
+nextQuestionBtn.onclick = handleNextQuestion;
+
+restartGameBtn.onclick = resetGame;
+addQuestionsBtn.onclick = addQuestion;
+
+submitNewQuestion.onclick = submitQuestionToQuiz;
+quitModalBtn.onclick = () => {
+    modal.classList.add('hide');
+    finalScreenElement.style.filter = '';
+    questionElement.style.filter = '';
 };
 
-nextButton.addEventListener('click', renderAnswers);
+// ---------------- Methods ----------------
 
-const checkCorrect = (answer, quiz) => {
-    if (t === 1) { return }
-    t++
-    let correctAnswer = quiz.answers[quiz.correct];
-    let allButtons = document.querySelectorAll('.answers button')
+// Render the questions
+function startGame() {
+    let dataIdCounter = 0;
 
-    allButtons.forEach(btn => {
-        if (btn.innerHTML === correctAnswer) {
-            btn.style.backgroundColor = 'rgba(2, 233, 2, 0.623)';
-            return;
-        }
-        btn.style.backgroundColor = 'rgba(255, 0, 0, 0.486)';
+    startGameBtn.style.display = 'none';
+
+    responses[currentQuestionIndex]
+        .answers.forEach(answer => {
+            const responseButton = document.createElement('button');
+            responseButton.textContent = answer.text;
+            responseButton.setAttribute('data-id', dataIdCounter);
+            responseButton.addEventListener('click', submitAnswer);
+            answerDiv.appendChild(responseButton);
+            dataIdCounter++;
+        })
+
+    questionElement.innerHTML = responses[currentQuestionIndex].question
+}
+
+
+// Check the answer and release access to the next question
+function submitAnswer(event) {
+    removeBtnEvents();
+
+    const responseText = event.target.textContent;
+    let dataId = event.target.dataset.id;
+
+    responses[currentQuestionIndex].answers.forEach((answer, index) => {
+       if (responseText === answer.text && answer.correct) {     
+            correctAnswerCounter++;
+       } else if (answer.correct) {
+            dataId = index;
+       }
     })
 
-    if (answer === correctAnswer){
-        alert('Correct Answer!')
-        correctCounter++
-        
-    }
-    counter++
-    nextButton.classList.remove('hide')
+    colorizeButtons(dataId);
+    nextQuestionBtn.classList.remove('hide');
+}
 
-    if (counter > quizElements.length - 1) {
-        renderFinishScreen();
+
+// Remove all button event listeners after a answer has been submitted
+function removeBtnEvents() {
+    const allButtons = answerDiv.querySelectorAll('button')
+    allButtons.forEach(btn => btn.removeEventListener('click', submitAnswer))
+}
+
+
+// Render next quiz question
+function handleNextQuestion() {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex >= responses.length) {
+        renderFinishScreen()
         return;
     }
-}
-    
-function renderFinishScreen() {
-    alert('Finish Screen')
-    answerDiv.innerHTML = ''
-    let finishText = document.createElement('h2')
-    answerDiv.appendChild(finishText)
-    finishText.textContent = 'Você completou o quiz!'
-    answerDiv.innerHTML += `Número de perguntas: ${counter}<br>`;
-    answerDiv.innerHTML += `Número de acertos: ${correctCounter}`;
-    counter = 0;
-    correctCounter = 0;
+
+    nextQuestionBtn.classList.add('hide');
+    answerDiv.innerHTML = '';
+    startGame();
 }
 
-const quizElements = [
+
+// Function for colorizing the response buttons after selecting one answer
+function colorizeButtons(correctId) {
+    const allButtons = answerDiv.querySelectorAll('button')
+
+    allButtons.forEach(button => {
+        button.style.backgroundColor = '#f0020267';
+        if (button.dataset.id == correctId) {
+            button.style.backgroundColor = '#00ff009c';
+        }
+    })
+}
+
+
+// End screen, rendered when all questions have been responded
+function renderFinishScreen() {
+    questionElement.innerHTML = 'Parabéns!';
+
+    const scoreHolder = document.querySelector('.scoreboard');
+    scoreHolder.innerHTML = '';
+
+    const scoreLabels = {
+        "Total de Questões": currentQuestionIndex,
+        "Total de acertos": correctAnswerCounter
+    }
+
+    answerDiv.innerHTML = '';
+
+    nextQuestionBtn.classList.add('hide')
+    finalScreenElement.classList.remove('hide')
+
+    Object.keys(scoreLabels).map(key =>  {
+        scoreHolder.innerHTML += `<p>${key}: ${scoreLabels[key]}</p>`;
+    });
+}
+
+
+// Reset the game variables
+function resetGame() {
+    const allModalInputs = modal.querySelectorAll('input[type=text]')
+
+    finalScreenElement.style.filter = '';
+    questionElement.style.filter = '';
+
+    currentQuestionIndex = 0;
+    correctAnswerCounter = 0;
+
+    finalScreenElement.classList.add('hide')
+
+    allModalInputs.forEach(input => input.value = '')
+
+    startGame()
+}
+
+let answerContainer = [];
+
+
+// Just removes the modal "hide" class
+function addQuestion() {
+    modal.classList.remove('hide')
+
+    finalScreenElement.style.filter = 'blur(5px)';
+    questionElement.style.filter = 'blur(5px)';
+}
+
+
+// Check all input fields and add new question to the Quiz
+function submitQuestionToQuiz(event) {
+    event.preventDefault();
+
+    const checkedRadios = [];
+
+    const mainModalQuestion = modal.querySelector('input[name=main-form-input]');
+    const checkedRadioBtn = modal.querySelectorAll('input[name=correct-radio-answer]');
+
+    if (checkAllModalFields()) {
+        checkedRadioBtn.forEach(radioBtn => checkedRadios.push(radioBtn.checked));
+
+        responses.push({
+            question: mainModalQuestion.value,
+            answers: [
+                { text: answerContainer[0], correct: checkedRadios[0] },
+                { text: answerContainer[1], correct: checkedRadios[1] },
+                { text: answerContainer[2], correct: checkedRadios[2] },
+                { text: answerContainer[3], correct: checkedRadios[3] }
+            ]
+        })
+
+        modal.classList.add('hide');
+
+        resetGame();
+    }
+}
+
+
+// Checks all input fields and returns true if all are filled,
+// and false if there is some input with value missing
+function checkAllModalFields() {
+    const controlArray = []
+    answerContainer = []
+
+    modal.querySelectorAll('.modal-answers input[type=text]')
+        .forEach(input => {
+            if (input.value.length > 0) {
+                controlArray.push(true)
+                answerContainer.push(input.value)
+            } else {
+                controlArray.push(false)
+            }
+    })
+
+    return controlArray.every(bool => bool === true);
+}
+
+
+// Variable that stores all answers and questions from the quiz
+const responses = [
     {
-        question: "Pergunta 1",
-        answers: ['Resposta 1', 'Resposta 2', 'Resposta 3', 'Resposta 4'],
-        correct: 2
+        question: "Questão 1",
+        answers: [
+            { text: "Resposta 1", correct: true },
+            { text: "Resposta 2", correct: false },
+            { text: "Resposta 3", correct: false },
+            { text: "Resposta 4", correct: false }
+        ]
     },
     {
-        question: "Pergunta 2",
-        answers: ['Resposta 5', 'Resposta 6', 'Resposta 7', 'Resposta 8'],
-        correct: 3
+        question: "Questão 2",
+        answers: [
+            { text: "Resposta 1", correct: true },
+            { text: "Resp 2", correct: false },
+            { text: "Resp 3", correct: false },
+            { text: "Resp 4", correct: false }
+        ]
     },
     {
-        question: "Pergunta 3",
-        answers: ['Resposta 9', 'Resposta 10', 'Resposta 11', 'Resposta 12'],
-        correct: 1
-    },
+        question: "Questão 3",
+        answers: [
+            { text: "Resp 1", correct: false },
+            { text: "Resp 2", correct: false },
+            { text: "Resp 3", correct: true },
+            { text: "Resp 4", correct: false }
+        ]
+    }
 ]
 
-renderAnswers();

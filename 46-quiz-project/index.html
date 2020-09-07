@@ -16,14 +16,57 @@
 
         <section class="quiz">
             <fieldset>
-                <legend class="question">Pergunta</legend>
+                <legend class="question">Quiz</legend>
                
                 <div class="answers">
                 </div>
 
+                <div class="outer-div">
+                    <div class="final-screen hide">
+                        <h1>Você completou o jogo!</h1>
+
+                        <div class="scoreboard"></div>
+
+                        <button class="restart-button">Recomeçar</button>
+                        <button class="add-questions">Adicionar perguntas</button>
+                    </div>
+                    <button class="start-game">Começar Jogo</button>
+                </div>
+                    
                 <button class="next-question hide">Próxima questão</button>
             </fieldset>
             
+            <div class="modal hide">
+                <form action="#">
+                    <h1> <img src="https://image.flaticon.com/icons/svg/1828/1828843.svg" alt="Quit Icon"> Adicionar nova pergunta ao Quiz</h1>
+                    <input type="text" name="main-form-input" placeholder="Sua pergunta...">
+                    <h3>(Selecione também a opção correta)</h3>
+                    <div class="modal-answers">
+                        <label for="0">
+                            <input type="text" placeholder="Primeira opção">
+                            <input type="radio" id="0" name="correct-radio-answer" data-id="0" checked>
+                        </label>
+                        
+                        <label for="1">
+                            <input type="text" placeholder="Segunda opção">
+                            <input type="radio" id="1" name="correct-radio-answer" data-id="1">
+                        </label>
+
+                        <label for="2">
+                            <input type="text" placeholder="Terceira opção">
+                            <input type="radio" id="2" name="correct-radio-answer" data-id="2">
+                        </label>
+
+                        <label for="3">
+                            <input type="text" placeholder="Quarta opção">
+                            <input type="radio" id="3" name="correct-radio-answer" data-id="3">
+                        </label>
+                    </div>
+
+                    <button type="submit">Pronto!</button>
+                </form>
+            </div>
+
         </section>
     </div>
 
