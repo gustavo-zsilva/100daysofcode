@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
     <title>Quiz Project</title>
@@ -38,28 +38,31 @@
             
             <div class="modal hide">
                 <form action="#">
-                    <h1> <img src="https://image.flaticon.com/icons/svg/1828/1828843.svg" alt="Quit Icon"> Adicionar nova pergunta ao Quiz</h1>
+                    <h1>
+                        <img src="https://image.flaticon.com/icons/svg/1828/1828843.svg" alt="Quit Icon">
+                        Adicionar nova pergunta ao Quiz
+                    </h1>
                     <input type="text" name="main-form-input" placeholder="Sua pergunta...">
                     <h3>(Selecione também a opção correta)</h3>
                     <div class="modal-answers">
                         <label for="0">
                             <input type="text" placeholder="Primeira opção">
-                            <input type="radio" id="0" name="correct-radio-answer" data-id="0" checked>
+                            <input type="radio" id="0" name="correct-radio-answer" checked>
                         </label>
                         
                         <label for="1">
                             <input type="text" placeholder="Segunda opção">
-                            <input type="radio" id="1" name="correct-radio-answer" data-id="1">
+                            <input type="radio" id="1" name="correct-radio-answer">
                         </label>
 
                         <label for="2">
                             <input type="text" placeholder="Terceira opção">
-                            <input type="radio" id="2" name="correct-radio-answer" data-id="2">
+                            <input type="radio" id="2" name="correct-radio-answer">
                         </label>
 
                         <label for="3">
                             <input type="text" placeholder="Quarta opção">
-                            <input type="radio" id="3" name="correct-radio-answer" data-id="3">
+                            <input type="radio" id="3" name="correct-radio-answer">
                         </label>
                     </div>
 
@@ -70,6 +73,6 @@
         </section>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./src/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,87 @@
+
+.modal {
+    color: $light-gray;
+
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #00000062;
+
+    form {
+        margin: 13rem 0;
+        padding: 0;
+
+        h1 {
+            border-bottom: 1px solid #f8edff;
+            padding-bottom: .5rem;
+            max-width: 28rem;
+            margin: 1rem auto;
+        
+            color: white;
+            font-family: 'Archivo', sans-serif;
+            letter-spacing: .06rem;
+        }
+
+        img {
+            width: 1.5rem;
+            margin-right: 2rem;
+            cursor: pointer;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+            box-sizing: border-box;
+
+            input[type="text"]::placeholder {
+                color: rgb(155, 154, 154);
+            }
+
+            input[type="radio"] {
+                margin-left: -1.5rem;
+                cursor: pointer;
+            }
+        }
+
+        .modal-answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        input[name="main-form-input"]::placeholder {
+            color: $light-gray;
+        }
+
+        input[type="text"] {
+            border-bottom: 2px solid $navy-blue-color;
+            color: $light-gray;
+
+            padding: .8rem;
+            width: 20rem;
+            background-color: #00000073;
+            border: none;
+
+            box-shadow: 3px 3px 3px #00000031;
+        }
+
+        button {
+            background-color: $red-color;
+            color: white;
+
+            padding: .8rem;
+            width: 20rem;
+            margin-top: 1rem;
+
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            border-radius: .2rem;
+            border: none;
+            box-shadow: 3px 3px 3px #00000031;
+            cursor: pointer;
+        }
+    }
+}

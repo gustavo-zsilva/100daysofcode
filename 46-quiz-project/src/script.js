@@ -1,17 +1,17 @@
 // ---------------- Variables ----------------
 
-const answerDiv = document.querySelector('.answers')
-const questionElement = document.querySelector('.question')
-const nextQuestionBtn = document.querySelector('.next-question')
+const answerDiv = document.querySelector('.answers');
+const questionElement = document.querySelector('.question');
+const nextQuestionBtn = document.querySelector('.next-question');
 const finalScreenElement = document.querySelector('.final-screen');
-const modal = document.querySelector('.modal')
+const modal = document.querySelector('.modal');
 
 // Button Variables
-const startGameBtn = document.querySelector('.start-game')
-const restartGameBtn = document.querySelector('.restart-button')
-const addQuestionsBtn = document.querySelector('.add-questions')
-const submitNewQuestion = modal.querySelector('button[type=submit]')
-const quitModalBtn = modal.querySelector('h1 img')
+const startGameBtn = document.querySelector('.start-game');
+const restartGameBtn = document.querySelector('.restart-button');
+const addQuestionsBtn = document.querySelector('.add-questions');
+const submitNewQuestion = modal.querySelector('button[type=submit]');
+const quitModalBtn = modal.querySelector('h1 img');
 
 // Counter Variables
 let currentQuestionIndex = 0;
@@ -33,14 +33,37 @@ quitModalBtn.onclick = () => {
 
 // ---------------- Methods ----------------
 
+// Shuffle the questions array
+function shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex]
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+
 // Render the questions
 function startGame() {
     let dataIdCounter = 0;
 
     startGameBtn.style.display = 'none';
 
-    responses[currentQuestionIndex]
-        .answers.forEach(answer => {
+    let shuffledQuestions = shuffle(responses[currentQuestionIndex].answers)
+
+    shuffledQuestions
+        .forEach(answer => {
             const responseButton = document.createElement('button');
             responseButton.textContent = answer.text;
             responseButton.setAttribute('data-id', dataIdCounter);
@@ -212,31 +235,30 @@ function checkAllModalFields() {
 // Variable that stores all answers and questions from the quiz
 const responses = [
     {
-        question: "Questão 1",
+        question: "Qual a maior cidade do Brasil?",
         answers: [
-            { text: "Resposta 1", correct: true },
-            { text: "Resposta 2", correct: false },
-            { text: "Resposta 3", correct: false },
-            { text: "Resposta 4", correct: false }
+            { text: "São Paulo", correct: true },
+            { text: "Salvador", correct: false },
+            { text: "Rio de Janeiro", correct: false },
+            { text: "Brasília", correct: false }
         ]
     },
     {
-        question: "Questão 2",
+        question: "Qual o maior planeta do sistema solar?",
         answers: [
-            { text: "Resposta 1", correct: true },
-            { text: "Resp 2", correct: false },
-            { text: "Resp 3", correct: false },
-            { text: "Resp 4", correct: false }
+            { text: "Júpiter", correct: true },
+            { text: "Marte", correct: false },
+            { text: "Saturno", correct: false },
+            { text: "Netuno", correct: false }
         ]
     },
     {
-        question: "Questão 3",
+        question: "Qual destes animais não é classificado como um aracnídeo?",
         answers: [
-            { text: "Resp 1", correct: false },
-            { text: "Resp 2", correct: false },
-            { text: "Resp 3", correct: true },
-            { text: "Resp 4", correct: false }
+            { text: "Aranha", correct: false },
+            { text: "Escorpião", correct: false },
+            { text: "Carrapato", correct: false },
+            { text: "Centopéia", correct: true }
         ]
     }
 ]
-

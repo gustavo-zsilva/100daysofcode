@@ -1,0 +1,14 @@
+$green-color: #00f300;
+$primary-color: black;
+$dark-purple-color: #2c002c;
+$navy-blue-color: #2525ff;
+$red-color: #ff0000;
+$light-gray: #f5f5f5;
+
+@import 'base';
+@import 'modal';
+@import 'container';
+@import 'header';
+@import 'quiz';
+@import 'responsive';
+
